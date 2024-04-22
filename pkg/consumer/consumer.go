@@ -13,8 +13,6 @@ import (
 
 	comatproto "github.com/bluesky-social/indigo/api/atproto"
 	"github.com/bluesky-social/indigo/atproto/data"
-	"github.com/goccy/go-json"
-
 	"github.com/bluesky-social/indigo/events"
 	"github.com/bluesky-social/indigo/repo"
 	"github.com/bluesky-social/indigo/repomgr"
@@ -271,6 +269,7 @@ func (c *Consumer) HandleRepoCommit(ctx context.Context, evt *comatproto.SyncSub
 				Collection: collection,
 				RKey:       rkey,
 				Record:     rec,
+				Cid:        op.Cid.String(),
 			}
 
 			err = c.Emit(ctx, e)
