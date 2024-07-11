@@ -23,7 +23,7 @@ jobs:
       attestations: write
       #
     env:
-      REGISTRY: junibqueer
+      REGISTRY: docker.io
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
