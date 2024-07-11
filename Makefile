@@ -6,6 +6,10 @@ GO_CMD = CGO_ENABLED=0 GOOS=linux go
 build:
 	@echo "Building Jetstream Go binary..."
 	$(GO_CMD_W_CGO) build -o jetstream cmd/jetstream/*.go
+.PHONY: build-docker
+build-docker:
+	@echo "Building Jetstream docker container"
+	docker compose build
 
 # Run Jetstream
 .PHONY: run
